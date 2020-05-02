@@ -33,7 +33,7 @@ function sortData(sortBy, hemisphere, available, month) {
 }
 
 export default function FishScreen({navigation}) {
-  const month = new Date().getMonth() + 1;
+  const month = new Date().getMonth();
   const [sortBy, setSortBy] = useState('name');
   const [hemisphere, setHemisphere] = useState('northern');
   const [isAvailable, setIsAvailable] = useState(true);
