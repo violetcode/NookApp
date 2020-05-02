@@ -8,12 +8,13 @@ import {styles} from '../style';
 import bugsData from '../../data/bugs.json';
 import Creature from '../creature';
 import CreatureModal from '../creature-modal';
+import { isNewItem } from '../../utils';
 
 function sortData(sortBy, hemisphere, available, month) {
   var newData = [].concat(bugsData);
   if (available) {
     newData = newData.filter(item =>
-      item.activeMonths[hemisphere].includes(month),
+      item.activeMonths[hemisphere].includes(month + 1),
     );
   }
 
@@ -53,7 +54,7 @@ export default function BugsScreen({navigation}) {
   }, [sortBy, hemisphere, isAvailable, month]);
 
   const renderItem = ({item}) => (
-    <Creature creature={item} onPress={showCreature} />
+    <Creature creature={item} onPress={showCreature} isNew={isNewItem(item, hemisphere, month)} />
   );
 
   return (

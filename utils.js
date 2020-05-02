@@ -56,3 +56,15 @@ export const getRarityDotStyle = rarity => {
       return styles.ultrarareDot;
   }
 };
+
+export const isNewItem = (item, hemisphere, month) => {
+  var active_months = item.activeMonths[hemisphere];
+  var last_month = month;
+  var current_month = month + 1;
+  if (last_month === -1) {
+    last_month = 12;
+  }
+  return (
+    active_months.includes(current_month) && !active_months.includes(last_month)
+  );
+}

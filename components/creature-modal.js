@@ -78,7 +78,7 @@ export default function CreatureModal({
                 {[0, 1, 2, 3, 4, 5].map(i => (
                   <Month
                     month={i}
-                    active={creature.activeMonths[hemisphere].includes(i)}
+                    active={creature.activeMonths[hemisphere].includes(i+1)}
                     key={`month-${i}`}
                   />
                 ))}
@@ -87,7 +87,7 @@ export default function CreatureModal({
                 {[6, 7, 8, 9, 10, 11].map(i => (
                   <Month
                     month={i}
-                    active={creature.activeMonths[hemisphere].includes(i)}
+                    active={creature.activeMonths[hemisphere].includes(i+1)}
                     key={`month-${i}`}
                   />
                 ))}

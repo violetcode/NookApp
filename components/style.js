@@ -134,4 +134,10 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     marginLeft: 10,
   },
+  newItem: {
+    color: '#ff0000',
+    fontSize: 20,
+    fontWeight: 'bold',
+    paddingLeft: 10,
+  },
 });
