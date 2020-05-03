@@ -67,12 +67,13 @@ export default function FishScreen({navigation}) {
       />
       <View style={styles.container}>
         <View style={{flexBasis: 75}}>
-          <View style={styles.centeredRow}>
+          <View style={styles.centeredRowJustify}>
             <View>
               <Text>Sort by:</Text>
               <Picker
                 selectedValue={sortBy}
-                style={{height: 50, width: 150}}
+                style={{height: 50, width: 110}}
+                itemStyle={{height: 50, fontSize: 16,}}
                 onValueChange={(itemValue, itemIndex) => setSortBy(itemValue)}>
                 <Picker.Item label="Name" value="name" />
                 <Picker.Item label="Price" value="sell" />
@@ -82,7 +83,8 @@ export default function FishScreen({navigation}) {
               <Text>Hemisphere:</Text>
               <Picker
                 selectedValue={hemisphere}
-                style={{height: 50, width: 150}}
+                style={{height: 50, width: 120}}
+                itemStyle={{height: 50, fontSize: 16,}}
                 onValueChange={(itemValue, itemIndex) =>
                   setHemisphere(itemValue)
                 }>
